@@ -5,8 +5,6 @@ const SITE = {
   telegram: "",
 };
 
-const SOL_MINT = "So11111111111111111111111111111111111111112";
-
 function realContract() {
   const value = (SITE.contract || "").trim();
   if (!value || value.toUpperCase() === "TBA") return "";
@@ -35,7 +33,7 @@ function applyContract() {
   });
 
   const buyHref = ca
-    ? `https://swap.pump.fun/?input=${SOL_MINT}&output=${encodeURIComponent(ca)}`
+    ? `https://app.uniswap.org/swap?chain=robinhood&outputCurrency=${encodeURIComponent(ca)}`
     : "#";
 
   document.querySelectorAll("[data-buy]").forEach((node) => {
